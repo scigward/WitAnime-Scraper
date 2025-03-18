@@ -1,0 +1,40 @@
+{
+	"package": "eu.kanade.tachiyomi.animeextension.ar.witanime",
+	"name": "WitAnime",
+	"baseUrl": "https://witanime.quest/api",
+	"lang": "ar",
+	"supportsLatest": true,
+	"endpoints": {
+		"popularAnime": "/popular?page={page}",
+		"searchAnime": "/search?q={query}",
+		"animeDetails": "/anime/{id}",
+		"episodeList": "/anime/{id}",
+		"videoList": "/anime/{id}/episode/{ep_id}"
+	},
+	"dataModels": {
+		"AnimeJson": {
+			"id": "string",
+			"title": "string",
+			"description": "string",
+			"genres": [
+				"string"
+			],
+			"thumbnail": "string",
+			"episodes": [
+				"EpisodeJson"
+			]
+		},
+		"EpisodeJson": {
+			"id": "string",
+			"title": "string",
+			"number": "integer",
+			"sources": [
+				"VideoJson"
+			]
+		},
+		"VideoJson": {
+			"url": "string",
+			"quality": "string"
+		}
+	}
+}
